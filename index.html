@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Data Fetcher - Premium Edition</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-animation">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">👥</div>
+                    <h1>UserVault Pro</h1>
+                </div>
+                <p class="subtitle">Advanced User Management System</p>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="totalUsers">0</span>
+                        <span class="stat-label">Total Users</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="apiUsers">0</span>
+                        <span class="stat-label">API Users</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="localUsers">0</span>
+                        <span class="stat-label">Added Users</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <div class="controls-left">
+                <button class="reload-btn" onclick="fetchUsers()">
+                    <span class="btn-icon">🔄</span>
+                    <span class="btn-text">Reload Data</span>
+                </button>
+                <button class="add-btn" onclick="openAddUserModal()">
+                    <span class="btn-icon">➕</span>
+                    <span class="btn-text">Add New</span>
+                </button>
+            </div>
+            <div class="controls-right">
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search users..." class="search-input">
+                    <span class="search-icon">🔍</span>
+                </div>
+            </div>
+        </div>
+        
+        <div id="userContainer">
+            <!-- User data will be displayed here -->
+        </div>
+    </div>
+
+    <!-- Add User Modal -->
+    <div id="addUserModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New User</h2>
+                <button class="close-btn" onclick="closeAddUserModal()">&times;</button>
+            </div>
+            <form id="addUserForm" class="user-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="userName">Full Name *</label>
+                        <input type="text" id="userName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="userUsername">Username *</label>
+                        <input type="text" id="userUsername" name="username" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="userEmail">Email *</label>
+                        <input type="email" id="userEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="userPhone">Phone</label>
+                        <input type="tel" id="userPhone" name="phone">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="userWebsite">Website</label>
+                    <input type="url" id="userWebsite" name="website" placeholder="https://example.com">
+                </div>
+
+                <div class="form-section">
+                    <h3>Address Information</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="userStreet">Street</label>
+                            <input type="text" id="userStreet" name="street">
+                        </div>
+                        <div class="form-group">
+                            <label for="userSuite">Suite</label>
+                            <input type="text" id="userSuite" name="suite">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="userCity">City</label>
+                            <input type="text" id="userCity" name="city">
+                        </div>
+                        <div class="form-group">
+                            <label for="userZipcode">Zipcode</label>
+                            <input type="text" id="userZipcode" name="zipcode">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Company Information</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="companyName">Company Name</label>
+                            <input type="text" id="companyName" name="companyName">
+                        </div>
+                        <div class="form-group">
+                            <label for="companyCatchPhrase">Catchphrase</label>
+                            <input type="text" id="companyCatchPhrase" name="catchPhrase">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn" onclick="closeAddUserModal()">Cancel</button>
+                    <button type="submit" class="submit-btn">
+                        <span class="btn-icon">✨</span>
+                        <span class="btn-text">Add User</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
