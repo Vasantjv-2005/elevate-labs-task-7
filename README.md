@@ -13,6 +13,7 @@
 - **Advanced Typography** - Gradient text fills and glowing shadow effects
 - **Cinematic Transitions** - Smooth cubic-bezier animations throughout
 - **Responsive Perfection** - Flawless experience on all devices
+- ** I have used the chatgpt and v0.dev to complete the task
 
 ![image](https://github.com/user-attachments/assets/14051446-0a9e-4617-8719-ce918255fba9)
 ![image](https://github.com/user-attachments/assets/6f70ca8d-f9fd-451a-8898-b2d182eda499)
