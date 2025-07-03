@@ -2,9 +2,7 @@
 
 ---
 
-### Here is my deployed version of my site:
-https://elevate-labs-task-7.vercel.app/  
-u can add the user u can see the added member below 
+
 
 ## ✨ Features
 
